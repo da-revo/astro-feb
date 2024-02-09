@@ -2,19 +2,25 @@ import { useState } from 'preact/hooks';
 
 export default function Greeting({size}) {
 
-  const [ s, setSize ] = useState(size);
+    const [ s, setSize ] = useState(size);
 
-  const [ finalGif, setFinalGif ] = useState(false);
+    const [ finalGif, setFinalGif ] = useState(false);
 
-  const [ message, setMessage ] = useState("Click Me");
+    const messages = ["Hi1", "Hello2", "Howdy3", "Hey there4"];
 
-  const messages = ["Hi", "Hello", "Howdy", "Hey there"]
+    const [index, setIndex] = useState(0);
 
-  const randomMessage = () => messages[(Math.floor(Math.random() * messages.length))];
+    const [message, setMessage] = useState(messages[index]);
 
   const remessage = () => {
-    setMessage(randomMessage)
+    if (index >= messages.length - 1) {
+      setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+    setMessage(messages[index]);
   };
+
 
   const resize = () => {
     setSize(Number(s) + 10); // Increase button size by 10
