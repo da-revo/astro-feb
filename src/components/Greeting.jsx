@@ -6,7 +6,7 @@ export default function Greeting({size}) {
 
     const [ finalGif, setFinalGif ] = useState(false);
 
-    const messages = ["Hi1", "Hello2", "Howdy3", "Hey there4"];
+    const messages = ["Hi 1", "Hello 2", "Howdy 3", "Hey there 4"];
 
     const [index, setIndex] = useState(0);
 
